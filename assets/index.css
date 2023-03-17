@@ -48,7 +48,7 @@ p {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 4px;
-    transition: width 1.2s, height 2.4s, transform 2.4s;
+    transition: width 1.2s, height 1.2s, transform 1.2s;
 }
 
 .book .page {
@@ -65,7 +65,7 @@ p {
     cursor: pointer;
     user-select: none;
     background-color: #f0f0f0;
-    transition: width 1.2s, height 2.4s, transform 2.4s;
+    transition: width 1.2s, height 1.2s, transform 1.2s;
 }
 
 .book .page:before {
@@ -243,10 +243,13 @@ body {
 .book .pages.opened {
     margin-top: -5em;
     width: 98vw;
-    transition: width 1.2s, height 2.4s, transform 2.4s;
+    transition: width 1.2s, height 1.2s, transform 1.2s;
+    padding-bottom: 1em;
 }
 
 .book .pages.opened .page {
     width: 49vw;
-    transition: width 1.2s, height 2.4s, transform 2.4s;
+    height: 73vh;
+    transition: width 1.2s, height 1.2s, transform 1.2s;
+    padding-bottom: 1em;
 }
