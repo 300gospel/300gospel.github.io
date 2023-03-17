@@ -306,6 +306,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('body').click(); // 모바일 가운데 정렬 느린 문제 해결
             for (var i = 0; i < pages.length; i++) {
                 //Or var page = pages[i];
                 pages[i].pageNum = i + 1;
