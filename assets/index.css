@@ -58,7 +58,7 @@ p {
     position: absolute;
     top: 0;
     width: 40vmin;
-    height: 90vmin;
+    height: 93vmin;
     transform-origin: 0 0;
     backface-visibility: hidden;
     transform-style: preserve-3d;
@@ -249,7 +249,7 @@ body {
 
 .book .pages.opened .page {
     width: 49vw;
-    height: 73vh;
+    height: 113vmin;
     transition: width 1.2s, height 1.2s, transform 1.2s;
     padding-bottom: 1em;
 }
