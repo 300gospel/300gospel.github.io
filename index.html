@@ -1,12 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>복음</title>
-</head>
-<body>
-    test
-</body>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>복음</title>
+    </head>
+    <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
+    <body>
+        <div class="bg-wrap">
+            <div class="p-wrap">
+                <p class="left-text"><span class="click">&nbsp;&nbsp;&nbsp;Click!</span><span style="font-family: Malgun Gothic; font-size:0.55em; position: relative; top: -0.1em;">&nbsp;&nbsp; >>&nbsp;&nbsp;&nbsp;</span></p>
+                <p class="right-text">
+                    <span style="font-family: Malgun Gothic; font-size:0.35em;">네가 만일 네 입으로 예수를 주로 시인하며 또 하나님께서 그를 죽은 자 가운데서 살리신 것을 네 마음에 믿으면 구원을 얻으리니
+                    사람이 마음으로 믿어 의에 이르고 입으로 시인하여 구원에 이르느니라 (로마서 10장 9-10절)</span>
+                </p>
+            </div>
+        </div>
+        <div class="book">
+            <div id="pages" class="pages">
+                <div class="page first">
+                    <img src="./assets/images/1.jpg" alt="">
+                </div>
+                <div class="page first_after">
+                    <img src="./assets/images/2.jpg" alt="">
+                </div>
+                <div class="page">
+                    <img src="./assets/images/3.jpg" alt="">
+                </div>
+                <div class="page">
+                    <img src="./assets/images/4.jpg" alt="">
+                </div>
+                <div class="page last_before">
+                    <img src="./assets/images/5.jpg" alt="">
+                </div>
+                <div class="page last">
+                    <img src="./assets/images/6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <style>
+        .book {
+            transition: opacity 0.4s 0.2s;
+        }
+
+        p {
+            margin-top: 8vw;
+            text-align: center;
+            font-size: 5vw;
+            color: rgb(80, 65, 65);
+            font-weight: 600;
+        }
+
+        .page {
+            width: 30vw;
+            height: 44vw;
+            background-color: #111111;
+            float: left;
+            margin-bottom: 0.5em;
+            background: left top no-repeat;
+            background-size: cover;
+            box-shadow: #f0ebc4 3px 3px 3px;
+        }
+
+        .page:hover {
+            box-shadow: #dcc77c 4.2px 4.2px 4.2px;
+        }
+
+        .page:nth-child(even) {
+            clear: both;
+        }
+
+        .page p {
+            line-height: 1;
+        }
+
+        .page img {
+            display: block;
+            width: 100%;
+        }
+
+        .book {
+            perspective: 250vw;
+        }
+
+        .book .pages {
+            width: 80vmin;
+            height: 90vmin;
+            position: relative;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            border-radius: 4px;
+        }
+
+        .book .page {
+            float: none;
+            clear: none;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            padding-top: 0.8rem;
+            width: 40vmin;
+            height: 90vmin;
+            transform-origin: 0 0;
+            transition: transform 1.4s;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            user-select: none;
+            background-color: #f0f0f0;
+        }
+
+        .book .page:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.7s;
+            z-index: 2;
+        }
+
+        .book .page:nth-child(odd) {
+            pointer-events: all;
+            transform: rotateY(0deg);
+            right: 0;
+            border-radius: 0 4px 4px 0;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, 0) 10%);
+        }
+
+        .book .page:nth-child(odd):hover {
+            transform: rotateY(-15deg);
+        }
+
+        .book .page:nth-child(odd):hover:before {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .book .page:nth-child(odd):before {
+            background: rgba(0, 0, 0, 0);
+        }
+
+        .book .page:nth-child(even) {
+            pointer-events: none;
+            transform: rotateY(180deg);
+            transform-origin: 100% 0;
+            left: 0;
+            border-radius: 4px 0 0 4px;
+            border-color: black;
+            background-image: linear-gradient(to left, rgba(0, 0, 0, .12) 0%, rgba(0, 0, 0, 0) 10%);
+        }
+
+        .book .page:nth-child(even):before {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .book .page.grabbing {
+            transition: none;
+        }
+
+        .book .page.flipped:nth-child(odd) {
+            pointer-events: none;
+            transform: rotateY(-180deg);
+        }
+
+        .book .page.flipped:nth-child(odd):before {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .book .page.flipped:nth-child(even) {
+            pointer-events: all;
+            transform: rotateY(0deg);
+        }
+
+        .book .page.flipped:nth-child(even):hover {
+            transform: rotateY(15deg);
+        }
+
+        .book .page.flipped:nth-child(even):hover:before {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .book .page.flipped:nth-child(even):before {
+            background: rgba(0, 0, 0, 0);
+        }
+
+        *,
+        * :before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: 'Lovers Quarrel', cursive;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        html {
+            height: 100%;
+            background-color: RGB(242, 238, 222);
+        }
+
+        body {
+            position: relative;
+            max-height: 100%;
+            top: 50%;
+            transform:translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .bg-wrap {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            background-image: url('./assets/images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            opacity: 0.7;
+        }
+
+        .bg-wrap .p-wrap {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg-wrap .p-wrap p {
+            display: table-cell;
+            width: 50%;
+            vertical-align: middle;
+            transition: color 1s;
+        }
+
+        .p-wrap .right-text {
+            padding: 0 1.5em;
+            line-height: 0.8;
+            color: transparent;
+        }
+
+        .page:nth-child(odd) {
+            background-position: right top;
+        }
+
+        @keyframes blink-effect {
+            25% {
+                opacity: 0.25;
+            }
+            32% {
+                opacity: 0.5;
+            }
+            39% {
+                opacity: 1;
+            }
+        }
+
+        .p-wrap .left-text {
+            animation: blink-effect 1s ease-in 2;
+            font-size: 11vw;
+        }
+    </style>
+
+    <script>
+        var pages = document.getElementsByClassName('page');
+        for (var i = 0; i < pages.length; i++) {
+            var page = pages[i];
+            if (i % 2 === 0) {
+                page.style.zIndex = (pages.length - i);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            for (var i = 0; i < pages.length; i++) {
+                //Or var page = pages[i];
+                pages[i].pageNum = i + 1;
+                pages[i].onclick = function () {
+                    if (this.pageNum % 2 === 0) {
+                        this.classList.remove('flipped');
+                        this.previousElementSibling.classList.remove('flipped');
+                    }
+                    else {
+                        this.classList.add('flipped');
+                        this.nextElementSibling.classList.add('flipped');
+                    }
+                }
+            }
+        })
+
+        document.querySelector('#pages').addEventListener('click', (e) => {
+            const page = e.target;
+            const left_text = document.querySelector('.left-text');
+            const right_text = document.querySelector('.right-text');
+            if (page.classList.contains('first')) {
+                left_text.style.color = "transparent";
+            } else if (page.classList.contains('first_after')) {
+                left_text.style.color = "rgb(80, 65, 65)";
+            } else if (page.classList.contains('last_before')) {
+                right_text.style.color = "rgb(80, 65, 65)";
+            } else if (page.classList.contains('last')) {
+                right_text.style.color = "transparent";
+            }
+        });
+    </script>
+
 </html>
