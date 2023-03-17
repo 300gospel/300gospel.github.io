@@ -89,18 +89,25 @@
         })
 
         document.querySelector('#pages').addEventListener('click', (e) => {
+            const pages = e.currentTarget;
             const page = e.target;
             const left_text = document.querySelector('.left-text');
             const right_text = document.querySelector('.right-text');
             if (page.classList.contains('first')) {
                 left_text.style.color = "transparent";
+                pages.classList.add('opened');
             } else if (page.classList.contains('first_after')) {
                 left_text.style.color = "rgb(80, 65, 65)";
+                pages.classList.remove('opened');
             } else if (page.classList.contains('last_before')) {
                 right_text.style.color = "rgb(80, 65, 65)";
+                pages.classList.remove('opened');
             } else if (page.classList.contains('last')) {
                 right_text.style.color = "transparent";
+                pages.classList.add('opened');
             }
+
+            
         });
     </script>
 

@@ -48,6 +48,8 @@ p {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 4px;
+    transition: width 0.5s;
+    transition: height 0.5s;
 }
 
 .book .page {
@@ -237,4 +239,14 @@ body {
 .p-wrap .left-text {
     animation: blink-effect 1s ease-in 5;
     font-size: 11vw;
+}
+
+.book .pages.opened {
+    width: 98vw;
+    transition: width 0.5s;
+    transition: height 0.5s;
+}
+
+.book .pages.opened .page {
+    width: 49vw;
 }
