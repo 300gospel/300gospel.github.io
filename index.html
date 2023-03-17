@@ -29,9 +29,9 @@
     <body>
         <div class="bg-wrap">
             <div class="p-wrap">
-                <p class="left-text"><span class="click">&nbsp;&nbsp;&nbsp;Click!</span><span style="font-family: Malgun Gothic; font-size:0.55em; position: relative; top: -0.1em;">&nbsp;&nbsp; >>&nbsp;&nbsp;&nbsp;</span></p>
+                <p class="left-text"><span class="click">&nbsp;&nbsp;&nbsp;Click!</span><span class="arrow">&nbsp;&nbsp; >>&nbsp;&nbsp;&nbsp;</span></p>
                 <p class="right-text">
-                    <span style="font-family: Malgun Gothic; font-size:0.35em;">네가 만일 네 입으로 예수를 주로 시인하며 또 하나님께서 그를 죽은 자 가운데서 살리신 것을 네 마음에 믿으면 구원을 얻으리니
+                    <span>네가 만일 네 입으로 예수를 주로 시인하며 또 하나님께서 그를 죽은 자 가운데서 살리신 것을 네 마음에 믿으면 구원을 얻으리니
                     사람이 마음으로 믿어 의에 이르고 입으로 시인하여 구원에 이르느니라 (로마서 10장 9-10절)</span>
                 </p>
             </div>
@@ -268,10 +268,22 @@
             transition: color 1s;
         }
 
+        .p-wrap .left-text .arrow {
+            font-family: Malgun Gothic; 
+            font-size:0.55em; 
+            position: relative; 
+            top: -0.1em;
+        }
+
         .p-wrap .right-text {
             padding: 0 1.5em;
             line-height: 0.8;
             color: transparent;
+        }
+
+        .p-wrap .right-text span {
+            font-family: Malgun Gothic; 
+            font-size: 0.35em;
         }
 
         .page:nth-child(odd) {
