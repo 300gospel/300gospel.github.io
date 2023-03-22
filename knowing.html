@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>복음</title>
+        <link rel="stylesheet" href="./assets/css/knowing.css">
+        <link rel="icon" href="./assets/favicons/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="./assets/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="./assets/favicons/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="./assets/favicons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
+    <body>
+        <div class="bg-wrap">
+            <div class="p-wrap">
+                <p class="left-text"><span class="click">&nbsp;&nbsp;&nbsp;Click!</span><span class="arrow">&nbsp;&nbsp; >>&nbsp;&nbsp;&nbsp;</span></p>
+                <p class="right-text">
+                    <span>네가 만일 네 입으로 예수를 주로 시인하며 또 하나님께서 그를 죽은 자 가운데서 살리신 것을 네 마음에 믿으면 구원을 얻으리니
+                    사람이 마음으로 믿어 의에 이르고 입으로 시인하여 구원에 이르느니라 (로마서 10장 9-10절)</span>
+                </p>
+            </div>
+        </div>
+        <div class="book">
+            <div id="pages" class="pages">
+                <div class="page first">
+                    <img src="./assets/images/1.jpg" alt="">
+                </div>
+                <div class="page first_after">
+                    <img src="./assets/images/2.jpg" alt="">
+                </div>
+                <div class="page">
+                    <img src="./assets/images/3.jpg" alt="">
+                </div>
+                <div class="page">
+                    <img src="./assets/images/4.jpg" alt="">
+                </div>
+                <div class="page last_before">
+                    <img src="./assets/images/5.jpg" alt="">
+                </div>
+                <div class="page last">
+                    <img src="./assets/images/6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        var pages = document.getElementsByClassName('page');
+        for (var i = 0; i < pages.length; i++) {
+            var page = pages[i];
+            if (i % 2 === 0) {
+                page.style.zIndex = (pages.length - i);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('body .book').focus(); // 모바일 가운데 정렬 느린 문제 해결
+            for (var i = 0; i < pages.length; i++) {
+                //Or var page = pages[i];
+                pages[i].pageNum = i + 1;
+                pages[i].onclick = function () {
+                    if (this.pageNum % 2 === 0) {
+                        this.classList.remove('flipped');
+                        this.previousElementSibling.classList.remove('flipped');
+                    }
+                    else {
+                        this.classList.add('flipped');
+                        this.nextElementSibling.classList.add('flipped');
+                    }
+                }
+            }
+        })
+
+        document.querySelector('#pages').addEventListener('click', (e) => {
+            const pages = e.currentTarget;
+            const page = e.target;
+            const left_text = document.querySelector('.left-text');
+            const right_text = document.querySelector('.right-text');
+            if (page.classList.contains('first')) {
+                left_text.style.color = "transparent";
+                pages.classList.add('opened');
+            } else if (page.classList.contains('first_after')) {
+                left_text.style.color = "rgb(80, 65, 65)";
+                pages.classList.remove('opened');
+            } else if (page.classList.contains('last_before')) {
+                right_text.style.color = "rgb(80, 65, 65)";
+                pages.classList.remove('opened');
+            } else if (page.classList.contains('last')) {
+                right_text.style.color = "transparent";
+                pages.classList.add('opened');
+            }     
+        });
+    </script>
+
+</html>
