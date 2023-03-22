@@ -241,15 +241,36 @@ body {
 }
 
 .book .pages.opened {
-    margin-top: -5em;
-    width: 98vw;
+    width: 98vmin;
+    height: 115vmin;
     transition: width 1.2s, height 1.2s, transform 1.2s;
     padding-bottom: 1em;
 }
 
 .book .pages.opened .page {
-    width: 49vw;
-    height: 113vmin;
+    width: 49vmin;
     transition: width 1.2s, height 1.2s, transform 1.2s;
     padding-bottom: 1em;
+}
+
+@media (min-width: 575px) {
+    .book .pages {
+        width: 80vmin;
+        height: 90vmin;
+    }
+
+    .book .pages .page {
+        width: 40vmin;
+        height: 90vmin;
+    }
+
+    .book .pages.opened {
+        width: 80vmin;
+        height: 90vmin;
+    }
+
+    .book .pages.opened .page {
+        width: 40vmin;
+        height: 90vmin;
+    }
 }
