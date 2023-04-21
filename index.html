@@ -1,41 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
     <title>복음</title>
+    <link rel="icon" href="./assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
+
 <body>
     <div class="cover"></div>
     <div>
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
-     </div>
+    </div>
     <ul class='list-book'>
         <li class='book'>
-          <img src='/assets/images/doyouknow/1.jpg' onclick="location.href='/doyouknow.html'"/>
-          <div class="shelf"></div>
-        </li>
-      
-        <li class='book'>
-          <img src='/assets/images/bridge/1.jpg' onclick="location.href='/bridge.html'"/>
-          <div class="shelf"></div>
-        </li>
-      
-        <li class='link'>
-          <p style="padding-top: 1vw; text-align: center; font-size: 1.3em; font-weight: 700;">성경 읽기</p>
-          <img style="opacity: 0.7; margin-top: 4.4vmin; height: 14vmin; max-height: 140px;" src='/assets/images/bible-2.png' onclick="window.open('http://www.holybible.or.kr/B_SAENEW/cgi/biblesrch.php?VR=SAENEW&QR=%C3%A2%BC%BC%B1%E2&OD=')"/>
-          <div class="shelf"></div>
+            <img src='/assets/images/doyouknow/1.jpg' onclick="location.href='/doyouknow.html'" />
+            <div class="shelf"></div>
         </li>
 
-        <!-- <li class='book'>
-          <img src=''/>
-          <div class="shelf"></div>
-        </li> -->
-        
-      </ul>
+        <li class='book'>
+            <img src='/assets/images/bridge/1.jpg' onclick="location.href='/bridge.html'" />
+            <div class="shelf"></div>
+        </li>
+
+        <li class='link' onclick="location.href='/letter.html'" >
+            <p style="padding-top: 1vw; text-align: center; font-size: 1.3em; font-weight: 700;">편지</p>
+            <img style="margin-top: 4.2vmin; height: 15vmin; max-height: 140px;" src='/assets/images/letter.png'/>
+            <div class="shelf"></div>
+        </li>
+
+        <li class='link' onclick="window.open('http://www.holybible.or.kr/B_SAENEW/cgi/biblesrch.php?VR=SAENEW&QR=%C3%A2%BC%BC%B1%E2&OD=')" >
+            <p style="padding-top: 1vw; text-align: center; font-size: 1.3em; font-weight: 700;">성경 읽기</p>
+            <img style="opacity: 0.7; margin-top: 4.4vmin; height: 14vmin; max-height: 140px;"
+                src='/assets/images/bible-2.png'/>
+            <div class="shelf"></div>
+        </li>
+
+    </ul>
 </body>
+
 </html>
