@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="stylesheet" href="/assets/css/bridge.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <title>복음 - 다리 예화</title>
 </head>
+
 <body>
-    
+    <div class="go-back">
+        <a href="/index.html"><img src="./assets/images/return.png" alt=""></a>
+    </div>
+    <div class="cover"></div>
+    <div class="book">
+        <div id="pages" class="pages">
+            <div class="page"
+                style="background-image: url('./assets/images/bridge/1.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/bridge/2.png'); background-position: center; background-size: contain;">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/bridge/3.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/bridge/4.jpg'); background-position: center; background-size: contain">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
+
+<script>
+    var pages = document.getElementsByClassName('page');
+    for (var i = 0; i < pages.length; i++) {
+        var page = pages[i];
+        if (i % 2 === 0) {
+            page.style.zIndex = (pages.length - i);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        for (var i = 0; i < pages.length; i++) {
+            //Or var page = pages[i];
+            pages[i].pageNum = i + 1;
+            pages[i].onclick = function () {
+                if (this.pageNum % 2 === 0) {
+                    this.classList.remove('flipped');
+                    this.previousElementSibling.classList.remove('flipped');
+                }
+                else {
+                    this.classList.add('flipped');
+                    this.nextElementSibling.classList.add('flipped');
+                }
+            }
+        }
+    })
+</script>

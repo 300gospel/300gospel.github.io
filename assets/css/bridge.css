@@ -1,40 +1,44 @@
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/bridge/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.25;
+}
+
+
 .book {
     transition: opacity 0.4s 0.2s;
 }
 
 p {
+    margin-top: 8vw;
     text-align: center;
     font-size: 5vw;
-    color: rgb(80, 65, 65);
-    font-weight: 600;
+    color: #000000;
 }
 
 .page {
-    width: 30vw;
+    width: 44vw;
     height: 44vw;
     background-color: #111111;
     float: left;
-    padding: 1.5em 0;
+    margin-bottom: 0.5em;
     background: left top no-repeat;
     background-size: cover;
-    box-shadow: #f0ebc4 3px 3px 3px;
 }
 
-.page:hover {
-    box-shadow: #dcc77c 4.2px 4.2px 4.2px;
+.page {
+    line-height: 1;
 }
 
 .page:nth-child(even) {
     clear: both;
-}
-
-.page p {
-    line-height: 1;
-}
-
-.page img {
-    display: block;
-    width: 100%;
 }
 
 .book {
@@ -42,13 +46,13 @@ p {
 }
 
 .book .pages {
-    width: 80vmin;
-    height: 90vmin;
+    width: 64vw;
+    height: 40vw;
     position: relative;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 4px;
-    transition: width 1.2s, height 1.2s, transform 1.2s;
+    /*box-shadow: 0 0 0 1px #e3dfd8;*/
 }
 
 .book .page {
@@ -56,16 +60,16 @@ p {
     clear: none;
     margin: 0;
     position: absolute;
-    top: 0;
-    width: 40vmin;
-    height: 92vmin;
+    top: -1vw;
+    width: 32vw;
+    height: 42vw;
     transform-origin: 0 0;
+    transition: transform 1.4s;
     backface-visibility: hidden;
     transform-style: preserve-3d;
     cursor: pointer;
     user-select: none;
     background-color: #f0f0f0;
-    transition: width 1.2s, height 1.2s, transform 1.2s;
 }
 
 .book .page:before {
@@ -152,125 +156,45 @@ p {
 
 html,
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: 'Lovers Quarrel', cursive;
+    background: rgba(255, 247, 221, 0.822);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding: 0 !important;
-    margin: 0 !important;
 }
 
 html {
     height: 100%;
-    background-color: RGB(242, 238, 222);
 }
 
 body {
-    position: relative;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.bg-wrap {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    background-image: url('./images/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    opacity: 0.7;
-}
-
-.bg-wrap .p-wrap {
-    display: table;
-}
-
-.bg-wrap .p-wrap p {
-    display: table-cell;
-    width: 50%;
-    vertical-align: middle;
-    transition: color 1s;
-}
-
-.p-wrap .left-text .arrow {
-    font-family: Malgun Gothic; 
-    font-size:0.55em; 
-    position: relative; 
-    top: -0.1em;
-}
-
-.p-wrap .right-text {
-    padding: 0 1.5em;
-    line-height: 0.8;
-    color: transparent;
-}
-
-.p-wrap .right-text span {
-    font-family: Malgun Gothic; 
-    font-size: 0.35em;
+    padding: 2em 0;
+    line-height: 1.5em;
 }
 
 .page:nth-child(odd) {
     background-position: right top;
 }
 
-@keyframes blink-effect {
-    25% {
-        opacity: 0.25;
+@media (max-width: 900px) {
+
+    .book {
+        padding-top: 62vmin;
     }
-    32% {
-        opacity: 0.5;
-    }
-    39% {
-        opacity: 1;
-    }
-}
 
-.p-wrap .left-text {
-    animation: blink-effect 1s ease-in 5;
-    font-size: 11vw;
-}
-
-.book .pages.opened {
-    width: 98vmin;
-    height: 115vmin;
-    transition: width 1.2s, height 1.2s, transform 1.2s;
-    padding-bottom: 1em;
-}
-
-.book .pages.opened .page {
-    width: 49vmin;
-    transition: width 1.2s, height 1.2s, transform 1.2s;
-    padding-bottom: 1em;
-}
-
-@media (min-width: 575px) {
     .book .pages {
-        width: 80vmin;
-        height: 90vmin;
+        width: 96vw;
+        height: 140vw;
     }
-
-    .book .pages .page {
-        width: 40vmin;
-        height: 90vmin;
-    }
-
-    .book .pages.opened {
-        width: 80vmin;
-        height: 90vmin;
-    }
-
-    .book .pages.opened .page {
-        width: 40vmin;
-        height: 90vmin;
+    
+    .book .page {
+        width: 48vw;
+        height: 70vw;
     }
 }
