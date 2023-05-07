@@ -215,8 +215,9 @@ body {
 }
 
 .p-wrap .right-text span {
-    font-family: Malgun Gothic; 
     font-size: 0.35em;
+    font-family: 'NanumBarunGothic';
+    font-weight: 700;
 }
 
 .page:nth-child(odd) {

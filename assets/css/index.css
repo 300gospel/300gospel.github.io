@@ -144,6 +144,10 @@ body {
     width: 100%;
 }
 
+.link p {
+    font-family: 'NanumBarunGothic';
+}
+
 .book {
     cursor: pointer;
     width: 18vw;

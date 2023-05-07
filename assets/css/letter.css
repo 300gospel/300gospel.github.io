@@ -14,7 +14,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 30px;
     box-sizing: border-box;
 }
 
@@ -40,12 +39,43 @@ body {
     width: 100%;
     height: 100%;
     min-height: 60vh;
-    padding: 35px 20px;
-    padding: 35px 40px;
-    background: repeating-linear-gradient(#F1EDE9, #F1EDE9 31px, #94ACD4 31px, #94ACD4 32px);
-    font-family: 'Shadows Into Light', cursive;
-    /* font-family: 'Nanum Pen Script', cursive; */
-    line-height: 45px;
+    padding: 35px 25px;
+    background: repeating-linear-gradient(#F1EDE9, #F1EDE9 33px, #94ACD4 33px, #94ACD4 33px);
+    font-family: 'NanumBarunGothic';
+    line-height: 33px;
     outline: 0;
-    font-size: 27px;
+    font-size: 18px;
 }
+
+.title {
+    font-family: 'NanumBarunGothic';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.title.main {
+    font-size: 23px;
+}
+
+/* 탑버튼 */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(151, 151, 151); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 12px 17px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 25px; /* Increase font size */
+    font-family: "NanumBarunGothic";
+    font-weight: 700;
+  }
+  
+  #myBtn:hover, #myBtn:active {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
