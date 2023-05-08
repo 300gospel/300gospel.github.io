@@ -338,10 +338,20 @@ WEF(세계경제포럼), WHO(세계보건기구), UN 등 국제기구들이 전 
     let info = urlParams.get('i');
     let tel = urlParams.get('t');
     const go = (url) => location.href = url + queryString;
-    info = decodeURIComponent(atob(info));
-    tel = atob(tel);
-    document.querySelector("#info").innerHTML = info;
-    document.querySelector("#tel").innerHTML = tel;
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        if (info) {
+            info = decodeURIComponent(atob(info));
+            document.querySelector("#info").innerHTML = info;
+        }
+
+        if (tel) {
+            tel = atob(tel);
+            document.querySelector("#tel").innerHTML = tel;
+        }
+
+    });
 </script>
 
 <script>

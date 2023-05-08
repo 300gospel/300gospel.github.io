@@ -66,20 +66,22 @@
     let info = urlParams.get('i');
     let tel = urlParams.get('t');
     const go = (url) => location.href = url + queryString;
-    info = decodeURIComponent(atob(info));
-    tel = atob(tel);
+
     document.addEventListener("DOMContentLoaded", () => {
-        
+
         if (info || tel) {
             document.querySelector(".last.page").style.background = "url('./assets/images/bridge/4-share.jpg') no-repeat center";
             document.querySelector(".last.page").style.backgroundSize = "contain";
         }
 
         if (info) {
+            info = decodeURIComponent(atob(info));
             document.querySelector("#info").innerHTML = info;
             document.querySelector("#m-info").innerHTML = info;
         }
+        
         if (tel) {
+            tel = atob(tel);
             document.querySelector("#tel").innerHTML = tel;
             document.querySelector("#m-tel").innerHTML = tel;
         }
