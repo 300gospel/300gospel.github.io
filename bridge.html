@@ -30,7 +30,7 @@
 
 <body>
     <div class="go-back">
-        <a href="/index.html"><img src="./assets/images/return.png" alt=""></a>
+        <a href="javascript:go('/index.html')"><img src="./assets/images/return.png" alt=""></a>
     </div>
     <div class="cover"></div>
     <div class="book">
@@ -44,14 +44,48 @@
             <div class="page"
                 style="background-image: url('./assets/images/bridge/3.jpg'); background-position: center; background-size: contain">
             </div>
-            <div class="page"
+            <div class="last page"
                 style="background-image: url('./assets/images/bridge/4.jpg'); background-position: center; background-size: contain">
+                <div class="share" style="text-align: center;">
+                    <span id="info"></span>&nbsp;&nbsp; <span id="tel"></span>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="m-share" style="text-align: center;">
+        <span id="m-info"></span>
+        <span id="m-tel"></span>
     </div>
 </body>
 
 </html>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let info = urlParams.get('i');
+    let tel = urlParams.get('t');
+    const go = (url) => location.href = url + queryString;
+    info = decodeURIComponent(atob(info));
+    tel = atob(tel);
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        if (info || tel) {
+            document.querySelector(".last.page").style.background = "url('./assets/images/bridge/4-share.jpg') no-repeat center";
+            document.querySelector(".last.page").style.backgroundSize = "contain";
+        }
+
+        if (info) {
+            document.querySelector("#info").innerHTML = info;
+            document.querySelector("#m-info").innerHTML = info;
+        }
+        if (tel) {
+            document.querySelector("#tel").innerHTML = tel;
+            document.querySelector("#m-tel").innerHTML = tel;
+        }
+
+    });
+</script>
 
 <script>
     var pages = document.getElementsByClassName('page');

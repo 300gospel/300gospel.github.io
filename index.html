@@ -36,16 +36,16 @@
     </div>
     <ul class='list-book'>
         <li class='book'>
-            <img src='/assets/images/doyouknow/1.jpg' onclick="location.href='/doyouknow.html'" />
+            <img src='/assets/images/doyouknow/1.jpg' onclick="go('doyouknow.html')"/>
             <div class="shelf"></div>
         </li>
 
         <li class='book'>
-            <img src='/assets/images/bridge/1.jpg' onclick="location.href='/bridge.html'" />
+            <img src='/assets/images/bridge/1.jpg' onclick="go('bridge.html')"/>
             <div class="shelf"></div>
         </li>
 
-        <li class='link' onclick="location.href='/letter.html'" >
+        <li class='link' onclick="go('letter.html')"/>
             <p style="padding-top: 1vw; text-align: center; font-size: 1.3em; font-weight: 700;">편지</p>
             <img style="margin-top: 4.2vmin; height: 15vmin; max-height: 140px;" src='/assets/images/letter.png'/>
             <div class="shelf"></div>
@@ -60,5 +60,10 @@
 
     </ul>
 </body>
+
+<script>
+    const queryString = window.location.search;
+    const go = (url) => location.href = url + queryString;
+</script>
 
 </html>

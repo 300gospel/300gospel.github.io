@@ -29,7 +29,7 @@
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top">&uarr;</button>
     <div class="go-back">
-        <a href="/index.html"><img src="./assets/images/return.png" alt=""></a>
+        <a href="javascript:go('/index.html')"><img src="./assets/images/return.png" alt=""></a>
     </div>
     <div class="notepad">
         <div class="top"></div>
@@ -322,13 +322,27 @@ WEF(세계경제포럼), WHO(세계보건기구), UN 등 국제기구들이 전 
 할렐루야!
 
 
-Good & Faithful Ministry  대표  허베드로 선교사,
-착하고충성된교회(예장대신) 목사 (010 5492 9125)
+<span id="info">Good & Faithful Ministry  대표  허베드로 선교사,
+착하고충성된교회(예장대신) 목사</span>  <span id="tel">(010 5492 9125)</span>
 
             </p>     
         </div>
+        <div class="bottom"></div>
     </div>
+    
 </body>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let info = urlParams.get('i');
+    let tel = urlParams.get('t');
+    const go = (url) => location.href = url + queryString;
+    info = decodeURIComponent(atob(info));
+    tel = atob(tel);
+    document.querySelector("#info").innerHTML = info;
+    document.querySelector("#tel").innerHTML = tel;
+</script>
 
 <script>
 

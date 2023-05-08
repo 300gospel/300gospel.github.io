@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 20px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 28px;
+  padding-bottom: 10px;
+}
+</style>
+<body>
+
+<h3>전도지에 사용하실 정보를 입력해주세요 (입력하신 정보를 바탕으로 주소가 생성됩니다)</h3>
+<p>입력하신 정보는 외부에 저장되지 않으며 알아보지 못하는 url 주소로 변환됩니다</p>
+
+<div>
+  <form id="f1">
+    <label for="info">소속 및 이름, 직분이 포함된 문장 (20 글자 이내)</label>
+    <input type="text" id="info" name="info" placeholder="소속 및 이름, 직분등을 입력해주세요 / 예 - OO교회 김목사/김집사/김청년 " onkeyup="chkword(this, 20)">
+
+    <label for="tel">연락처 ( - 제외)</label>
+    <input id="tel" name="tel" type="text" value="" placeholder="연락처를 입력해주세요 -(하이픈) 제외" maxlength="11"/>
+
+    <input type="submit" value="적용">
+  </form>
+</div>
+
+</body>
+
+<script>
+    
+    function phoneNumber(value) {
+        if (!value) {
+            return "";
+        }
+
+        value = value.replace(/[^0-9]/g, "");
+
+        let result = [];
+        let restNumber = "";
+
+        // 지역번호와 나머지 번호로 나누기
+        if (value.startsWith("02")) {
+            // 서울 02 지역번호
+            result.push(value.substr(0, 2));
+            restNumber = value.substring(2);
+        } else if (value.startsWith("1")) {
+            // 지역 번호가 없는 경우
+            // 1xxx-yyyy
+            restNumber = value;
+        } else {
+            // 나머지 3자리 지역번호
+            // 0xx-yyyy-zzzz
+            result.push(value.substr(0, 3));
+            restNumber = value.substring(3);
+        }
+
+        if (restNumber.length === 7) {
+            // 7자리만 남았을 때는 xxx-yyyy
+            result.push(restNumber.substring(0, 3));
+            result.push(restNumber.substring(3));
+        } else {
+            result.push(restNumber.substring(0, 4));
+            result.push(restNumber.substring(4));
+        }
+
+        return result.filter((val) => val).join("-");
+    }
+
+    function chkword(obj, maxlength) {
+        var str = obj.value; // 이벤트가 일어난 컨트롤의 value 값
+        var str_length = str.length; // 전체길이
+    
+        // 변수초기화
+        var max_length = maxlength; // 제한할 글자수 크기
+        var i = 0; // for문에 사용
+        var ko_byte = 0; // 한글일경우는 2 그밗에는 1을 더함
+        var li_len = 0; // substring하기 위해서 사용
+        var one_char = ""; // 한글자씩 검사한다
+        var str2 = ""; // 글자수를 초과하면 제한할수 글자전까지만 보여준다.
+    
+        for (i = 0; i < str_length; i++) {
+            // 한글자추출
+            one_char = str.charAt(i);
+                ko_byte++;
+            }
+    
+            // 전체 크기가 max_length를 넘지않으면
+            if (ko_byte <= max_length) {
+                li_len = i + 1;
+            }
+        
+    
+        // 전체길이를 초과하면
+        if (ko_byte > max_length) {
+            alert(max_length + " 글자 이상 입력할 수 없습니다.");
+            str2 = str.substr(0, max_length);
+            obj.value = str2;
+        }
+        obj.focus();
+	}
+
+    const form = document.querySelector('#f1');
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const info = btoa(encodeURIComponent(form.info.value));
+        const tel = btoa(phoneNumber(form.tel.value));
+        const url = location.hostname + "/?i=" + info + "&t=" + tel;
+        prompt('아래 주소를 복사하여 사용하세요', url);
+    });
+
+</script>
+
+</html>
