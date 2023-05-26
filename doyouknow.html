@@ -60,14 +60,38 @@
                 </div>
                 <div class="page last">
                     <img src="./assets/images/doyouknow/6.jpg" alt="">
+                    <div class="share" style="text-align: center;">
+                        <span id="info"></span><br/><br/>
+                        <span id="tel"></span>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="m-share" style="text-align: center;">
+            <span id="m-info"></span>
+            <span id="m-tel"></span>
         </div>
     </body>
 
     <script>
         const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let info = urlParams.get('i');
+        let tel = urlParams.get('t');
         const go = (url) => location.href = url + queryString;
+
+        if (info) {
+            info = decodeURIComponent(atob(info));
+            document.querySelector("#info").innerHTML = info;
+            document.querySelector("#m-info").innerHTML = info;
+        }
+        
+        if (tel) {
+            tel = atob(tel);
+            document.querySelector("#tel").innerHTML = tel;
+            document.querySelector("#m-tel").innerHTML = tel;
+        }
+
     </script>
 
     <script>
