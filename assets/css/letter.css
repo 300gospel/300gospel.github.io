@@ -83,33 +83,34 @@ body {
 
 .change-lang {
     top: 24.2px;
-    right: 97px;
+    right: 109px;
     position: absolute;
     width: 12vw;
     height: 12vw;
     max-width: 58px;
     max-height: 58px;
     z-index: 99;
+    margin: 0 auto;
 }
 
 .change-lang a {
     display: block;
     text-align: center;
     width: 120px;
-    height: 100%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     text-decoration: none;
-    line-height: 2.335;
     border-radius: 12px;
-    padding: 1px;
+    padding: 14.7px;
+    padding-bottom: 17px;
+    box-sizing: border-box;
     background: white;
-    outline: #2d93ff 5px solid;
-    color: #2d93ff;
+    outline: #b4aaa1 8px outset;
+    color: #b4aaa1;
 }
 
 .change-lang a:hover {
     color: white;
-    background: #2d93ff;
+    background: #b4aaa1;
     /* outline: white 5px solid; */
 }

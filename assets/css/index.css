@@ -105,7 +105,7 @@ body {
 
 .list-book {
     position: relative;
-    top: 52%;
+    top: 48.5%;
     transform: translateY(-50%);
     display: flex;
     flex-wrap: wrap;
@@ -211,11 +211,41 @@ body {
     border-radius: 0.2vw;
 };
 
-/* @media (min-width: 870px) {
-    .link > p {
-        border: 1px solid red;
+.bottom-info {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 98px;
+    box-sizing: border-box;
+    padding-top: 4px;
+    background: #00000077;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 12.2px;
+    word-break: keep-all;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 2px 5px rgb(0, 0, 0);
+}
+
+.mini {
+    font-size: 11px;
+}
+
+.bottom-info a {
+    color: white;
+}
+
+
+@media (max-width: 750px) {
+    .bottom-info {
+        font-size: 9px;
     }
-} */
+
+    .mini {
+        font-size: 8px;
+    }
+}
 
 @media (max-width: 875px) {
     .link > p {
