@@ -75,8 +75,41 @@ body {
     font-size: 25px; /* Increase font size */
     font-family: "NanumBarunGothic";
     font-weight: 700;
-  }
-  
-  #myBtn:hover, #myBtn:active {
+}
+
+#myBtn:hover, #myBtn:active {
     background-color: #555; /* Add a dark-grey background on hover */
-  }
+}
+
+.change-lang {
+    top: 24.2px;
+    right: 97px;
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    max-width: 58px;
+    max-height: 58px;
+    z-index: 99;
+}
+
+.change-lang a {
+    display: block;
+    text-align: center;
+    width: 120px;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 2.335;
+    border-radius: 12px;
+    padding: 1px;
+    background: white;
+    outline: #2d93ff 5px solid;
+    color: #2d93ff;
+}
+
+.change-lang a:hover {
+    color: white;
+    background: #2d93ff;
+    /* outline: white 5px solid; */
+}
