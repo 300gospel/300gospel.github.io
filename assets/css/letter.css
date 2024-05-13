@@ -110,7 +110,9 @@ body {
 }
 
 .change-lang a:hover {
-    color: white;
-    background: #b4aaa1;
+    color: #b4aaa1;
+    /* color: white; */
+    /* background: #b4aaa1; */
+    background: white;
     /* outline: white 5px solid; */
 }
