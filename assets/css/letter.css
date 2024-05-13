@@ -104,9 +104,9 @@ body {
     padding: 14.7px;
     padding-bottom: 17px;
     box-sizing: border-box;
-    background: white;
+    background: #b4aaa1;
     outline: #b4aaa1 8px outset;
-    color: #b4aaa1;
+    color: white;
 }
 
 .change-lang a:hover {
