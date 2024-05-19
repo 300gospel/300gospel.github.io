@@ -279,6 +279,7 @@ body {
     display: block;
     top: -6vh;
     font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .lang-wrap {
@@ -359,7 +360,8 @@ body {
   font-weight: 700;
   box-sizing: border-box;
   text-align: center;
-  text-align: ;
+  min-height: 50px;
+
 }
 .select-box__list {
   position: absolute;
