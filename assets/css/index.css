@@ -409,3 +409,113 @@ body {
     transform: scaleY(0);
   }
 }
+
+/* 2단 책받침 */
+
+.double.list-book {
+    position: relative;
+    top: 48.5%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 auto;
+    padding-left: 0;
+    justify-content: center;
+}
+
+.double.list-book>li {
+    width: 18vmin;
+    height: 32.5vmin;
+    margin: 1.5vw;
+    /* margin: 1.5vw 5vw; */
+}
+
+.double .link:hover {
+    box-shadow: 0 4px 8px 5px rgb(255, 245, 156);
+}
+
+.double .link {
+    width: 18vw;
+    background: white;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s linear;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.double .link img {
+    display: block;
+    width: 100%;
+}
+
+.double .link p {
+    font-family: 'NanumBarunGothic';
+}
+
+.double .book {
+    cursor: pointer;
+    width: 18vw;
+    position: relative;
+    background: white;
+    z-index: 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: box-shadow 0.3s linear;
+}
+
+.double .book img {
+    width: inherit;
+    height: inherit;
+    transform-origin: 0 50%;
+    transform: rotateY(0);
+    transition: all 0.45s ease;
+}
+
+.double .book:hover {
+    box-shadow: 0 4px 8px 5px rgb(255, 245, 156);
+}
+
+.double .book:hover img {
+    transform: rotateY(-25deg);
+    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.double .book::after,
+.double .book::before {
+    content: "";
+    display: block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    background: white;
+    border: 2px solid #d9d9d9;
+}
+
+.double .book::before {
+    left: -3px;
+}
+
+.double .book::after {
+    left: -6px;
+}
+
+.double .shelf {
+    position: fixed;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 85vw;
+    max-width: 1000px;
+    min-height: 3vh;
+    background: #836d46;
+    box-shadow: 0 0.5vh 0.5vh rgb(151, 137, 121);
+    border-radius: 0.2vw;
+};
