@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/index.css?v202404080200">
-    <title>복음</title>
+    <title>The Gospel</title>
     <link rel="icon" href="/assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./assets/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/assets/favicons/ms-icon-144x144.png">
@@ -35,16 +35,16 @@
         <div class="wave"></div>
     </div>
 
-    <div class="lang-wrap double">
+    <div class="lang-wrap">
         <span id="lang-title">Language</span>
         <div class="select-box">
             <div class="select-box__current" tabindex="1">
                 <div class="select-box__value">
-                    <input class="select-box__input" type="radio" id="0" value="1" name="lang" checked="checked"/>
+                    <input class="select-box__input" type="radio" id="0" value="1" name="lang">
                     <p class="select-box__input-text">한국어</p>
                 </div>
                 <div class="select-box__value">
-                    <input class="select-box__input" type="radio" id="1" value="2" name="lang"/>
+                    <input class="select-box__input" type="radio" id="1" value="2" name="lang" checked="checked">
                     <p class="select-box__input-text">English</p>
                 </div>
                 <!-- <div class="select-box__value">
@@ -81,32 +81,32 @@
         </div>
     </div>
 
-    <ul class='double list-book'>
-        <li class='book'>
+    <ul class='list-book'>
+        <!-- <li class='book'>
             <img src='/assets/images/doyouknow/1.jpg' onclick="go('doyouknow.html')"/>
+            <div class="shelf"></div>
         </li>
+
         <li class='book'>
             <img src='/assets/images/bridge/1.jpg' onclick="go('bridge.html')"/>
-        </li>
-        <li class='link' onclick="go('letter.html')"/>
-            <p style="padding-top: 1vw; text-align: center; font-size: 1.3em; font-weight: 700;">편지</p>
+            <div class="shelf"></div>
+        </li> -->
+
+        <li class='link' onclick="go('./letter.html')"/>
+            <p style="padding-top: 1vw; text-align: center; font-size: 1.3em; font-weight: 700;">Letter</p>
             <img style="margin-top: 4.2vmin; height: 15vmin; max-height: 140px;" src='/assets/images/letter.png'/>
+            <div class="shelf"></div>
         </li>
-        <li class='link' onclick="window.open('https://www.bskorea.or.kr/bible/korbibReadpage.php?version=SAE&book=gen&chap=1&sec=1&cVersion=&fontSize=15px&fontWeight=normal')" >
+
+        <!-- <li class='link' onclick="window.open('https://www.bskorea.or.kr/bible/korbibReadpage.php?version=SAE&book=gen&chap=1&sec=1&cVersion=&fontSize=15px&fontWeight=normal')" >
             <p style="padding-top: 1vw; text-align: center; font-size: 1.3em; font-weight: 700;">성경 읽기</p>
             <img style="opacity: 0.7; margin-top: 4.4vmin; height: 14vmin; max-height: 140px;"
                 src='/assets/images/bible-2.png'/>
-        </li>
-        <div class="shelf"></div>
-    </ul>
-    <ul class='double list-book'>
-        <li class='book'>
-            <img src='/assets/images/gift/1.jpg' onclick="go('gift.html')"/>
-        </li>
-        <div class="shelf"></div>
+            <div class="shelf"></div>
+        </li> -->
     </ul>
     <div class="bottom-info">
-        <p>made by <strong>착하고충성된교회 ( Good & Faithful Church )</strong> <span class="mini">대한예수교장로회총회(대신)</span> <br/><strong>북한선교 / 거룩한교회 회복운동 / WCC, WEA 반대 / 카톨릭과 신앙.직제일치 반대 / 동성애, 차별금지법 반대</strong> <br/> <span class="mini">교회카페: <a href="https://cafe.daum.net/gafc0691">https://cafe.daum.net/gafc0691</a> / 신앙상담: 010-5492-9125 허베드로 선교사</span></p>
+        <p>made by <strong>Good & Faithful Church</strong> <span class="mini">Presbyterian Church of Korea DAESHIN</span> <br/><strong>North Korean missionary work / The restoration movement of The Holy Church / Opposition WCC, WEA / Opposition to Catholicism and the unity of faith and organization / Homosexuality Opposes Anti-Discrimination Law</strong> <br/> <span class="mini">Homepage: <a href="https://cafe.daum.net/gafc0691">https://cafe.daum.net/gafc0691</a> / Counseling of faith: Peter Huh Missionary 010-5492-9125</span></p>
     </div>
 </body>
 

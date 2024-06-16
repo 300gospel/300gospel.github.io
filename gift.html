@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/gift.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <title>복음 - 선물</title>
+    <link rel="icon" href="./assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <div class="go-back">
+        <a href="javascript:go('/index.html')"><img src="./assets/images/return.png" alt=""></a>
+    </div>
+    <div class="cover"></div>
+    <div class="book">
+        <div id="pages" class="pages">
+            <div class="page"
+                style="background-image: url('./assets/images/gift/1.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/2.jpg'); background-position: center; background-size: contain;">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/3.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/4.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/5.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/6.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/7.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/8.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/9.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/10.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/11.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/12.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/13.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/14.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="page"
+                style="background-image: url('./assets/images/gift/15.jpg'); background-position: center; background-size: contain">
+            </div>
+            <div class="last page"
+                style="background-image: url('./assets/images/gift/16.jpg'); background-position: center; background-size: contain">
+            </div>
+
+        </div>
+    </div>
+    <div class="m-share" style="text-align: center;">
+        <span id="m-info"></span>
+        <span id="m-tel"></span>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let info = urlParams.get('i');
+    let tel = urlParams.get('t');
+    const go = (url) => location.href = url + queryString;
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        if (info) {
+            info = decodeURIComponent(atob(info));
+            document.querySelector("#info").innerHTML = info;
+            document.querySelector("#m-info").innerHTML = info;
+        }
+        
+        if (tel) {
+            tel = atob(tel);
+            document.querySelector("#tel").innerHTML = tel;
+            document.querySelector("#m-tel").innerHTML = tel;
+        }
+
+    });
+</script>
+
+<script>
+    var pages = document.getElementsByClassName('page');
+    for (var i = 0; i < pages.length; i++) {
+        var page = pages[i];
+        if (i % 2 === 0) {
+            page.style.zIndex = (pages.length - i);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        for (var i = 0; i < pages.length; i++) {
+            //Or var page = pages[i];
+            pages[i].pageNum = i + 1;
+            pages[i].onclick = function () {
+                if (this.pageNum % 2 === 0) {
+                    this.classList.remove('flipped');
+                    this.previousElementSibling.classList.remove('flipped');
+                }
+                else {
+                    this.classList.add('flipped');
+                    this.nextElementSibling.classList.add('flipped');
+                }
+            }
+        }
+    })
+</script>
