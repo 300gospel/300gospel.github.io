@@ -549,11 +549,11 @@ body {
     
     
     .list-book.double:nth-of-type(2) {
-        padding-top: 8vh;
+        padding-top: 8vh !important;
     }
 
     .lang-wrap.double {
-        margin-top: 17.5vh;
+        margin-top: 17.5vh !important;
     }
 
 }
