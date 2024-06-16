@@ -536,7 +536,7 @@ body {
 };
 
 
-@media (min-width: 300px) and (max-width: 540px) {
+@media (max-width: 540px) {
 
     .double.list-book>li {
         width: 18.5vmin;
@@ -544,16 +544,16 @@ body {
     }
 
     .list-book.double:nth-of-type(1) {
-        padding-top: 0.5vmin;
+        padding-top: 0;
     }
-      
-      
+    
+    
     .list-book.double:nth-of-type(2) {
-        padding-top: 7vmin;
+        padding-top: 8vh;
     }
 
     .lang-wrap.double {
-        margin-top: 19vmin;
+        margin-top: 17.5vh;
     }
 
 }
